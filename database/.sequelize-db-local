@@ -1,0 +1,7 @@
+const path = require('path');
+
+module.exports = {
+    "config": path.resolve('./database/config', 'db-local-config.js'),
+    "migrations-path": path.resolve('./database/migrations/db-local'),
+    "seeders-path": path.resolve('./database/seeders/db-local')
+};
