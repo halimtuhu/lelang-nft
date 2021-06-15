@@ -72,6 +72,9 @@ export class StoreAuctionRequestDto {
     @Expose({ name: 'ended_at' })
     endedAt: Date;
 
+    @IsNotEmpty()
+    signature: string;
+
     generate(auction: AuctionModel): AuctionModelDto {
         return {
             id: auction.id,

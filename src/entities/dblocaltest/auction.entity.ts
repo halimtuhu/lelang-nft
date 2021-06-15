@@ -87,4 +87,7 @@ export class AuctionModel
     @Column({ field: 'deleted_at', type: DataType.DATE })
     @DeletedAt
     deletedAt?: Date;
+
+    @Column({ field: 'signature', type: DataType.STRING })
+    signature: string;
 }

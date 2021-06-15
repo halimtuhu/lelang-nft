@@ -3,9 +3,13 @@ import { AuctionModel } from 'src/entities/dblocaltest';
 import { AuctionModelDto, StoreAuctionRequestDto } from '../dto/auction.dto';
 
 export class StoreAuctionService {
+    validateSignature(dto: StoreAuctionRequestDto): void {
+        if (dto.signature !== 'thisisavalidsignature')
+            throw new BadRequestException('Signature not valid');
+    }
+
     async store(dto: StoreAuctionRequestDto): Promise<AuctionModelDto> {
-        if (dto.tokenId === 500)
-            throw new BadRequestException('Token id must not in exact 500');
+        this.validateSignature(dto);
 
         const auction: AuctionModel = new AuctionModel();
         auction.set({ ...dto });
