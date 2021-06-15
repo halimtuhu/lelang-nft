@@ -15,9 +15,9 @@ export interface IAuctionModel {
     tokenId: number;
     tokenAddress: string;
     sellerAddress: string;
-    startingPrice: bigint;
-    bidIncrement: bigint;
-    reservedPrice: bigint;
+    startingPrice: number;
+    bidIncrement: number;
+    reservedPrice: number;
     startedAt: Date;
     endedAt: Date;
     closedAt?: Date;
@@ -56,13 +56,13 @@ export class AuctionModel
     sellerAddress: string;
 
     @Column({ field: 'starting_price', type: DataType.BIGINT })
-    startingPrice: bigint;
+    startingPrice: number;
 
     @Column({ field: 'bid_increment', type: DataType.BIGINT })
-    bidIncrement: bigint;
+    bidIncrement: number;
 
     @Column({ field: 'reserved_price', type: DataType.BIGINT })
-    reservedPrice: bigint;
+    reservedPrice: number;
 
     @Column({ field: 'started_at', type: DataType.DATE })
     startedAt: Date;

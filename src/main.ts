@@ -18,9 +18,9 @@ async function bootstrap() {
     const config = new DocumentBuilder()
         .addBearerAuth()
         .addBasicAuth()
-        .setTitle('Polka War API')
+        .setTitle('Lelang NFT API')
         .setVersion('1.0')
-        .setDescription('')
+        .setDescription('Set of API used for Lelang NFT Apps')
         .build();
     const document = SwaggerModule.createDocument(app, config);
     SwaggerModule.setup('api-docs', app, document, {
